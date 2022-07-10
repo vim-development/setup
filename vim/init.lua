@@ -261,3 +261,10 @@ cmd [[highlight xmlAttrib cterm=italic term=italic gui=italic]]
 cmd [[highlight Normal ctermbg=none]]
 -- make the StatusLine background match the GalaxyLine styles
 cmd("hi StatusLine guibg=" .. colors.bg)
+
+-- PLUGINS 
+
+-- NERDTree
+
+-- vim.api.nvim_exec("autocmd VimEnter * NERDTree | wincmd p", false)
+

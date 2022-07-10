@@ -14,8 +14,11 @@ function NvimTreeConfig.find_toggle()
 end
 
 nnoremap("<leader>k", "<CMD>lua NvimTreeConfig.find_toggle()<CR>")
+nnoremap("<leader>t", "<CMD>lua NvimTreeConfig.find_focus()<CR>")
 
 nvimtree.setup {
+  open_on_setup = true,
+  open_on_setup_file = true,
   disable_netrw = false,
   hijack_netrw = true,
   diagnostics = {
@@ -70,7 +73,7 @@ nvimtree.setup {
     ignore = false
   },
   view = {
-    width = 60,
+    width = 40,
     side = "left"
   }
 }
