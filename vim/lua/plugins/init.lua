@@ -187,8 +187,9 @@ Plug "nvim-telescope/telescope-rg.nvim"
 Plug "startup-nvim/startup.nvim"
 
 -- fzf
-Plug "$HOMEBREW_PREFIX/opt/fzf"
+-- Plug "$HOMEBREW_PREFIX/opt/fzf"
 Plug "junegunn/fzf.vim"
+
 -- Power telescope with FZF
 Plug("nvim-telescope/telescope-fzf-native.nvim", {["do"] = "make"})
 
@@ -209,7 +210,7 @@ require("plugins.lspconfig")
 require("plugins.completion")
 require("plugins.treesitter")
 require("plugins.nvimtree")
-require("plugins.formatter")
+-- require("plugins.formatter")
 require("plugins.tabline")
 require("plugins.feline")
 require("plugins.startup")

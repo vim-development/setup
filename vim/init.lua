@@ -1,5 +1,4 @@
--- init.lua
--- Neovim-specific configuration
+-- NEOVIM - SPECIFIC CONFIGURATION
 
 require("globals")
 
@@ -97,6 +96,7 @@ opt.timeoutlen = 500
 ---------------------------------------------------------
 o.termguicolors = true
 opt.number = true -- show line numbers
+opt.relativenumber = true -- show relative line numbers
 opt.wrap = true -- turn on line wrapping
 opt.wrapmargin = 8 -- wrap lines when coming within n characters from side
 opt.linebreak = true -- set soft wrapping
@@ -116,7 +116,6 @@ opt.showcmd = true -- show incomplete commands
 opt.showmode = true -- don't show which mode disabled for PowerLine
 opt.wildmode = {"list", "longest"} -- complete files like a shell
 opt.shell = env.SHELL
--- opt.cmdheight = 0 -- hide command bar when not used
 opt.title = true -- set terminal title
 opt.showmatch = true -- show matching braces
 opt.mat = 2 -- how many tenths of a second to blink
@@ -244,11 +243,13 @@ require("plugins")
 
 if utils.file_exists(fn.expand("~/.vimrc_background")) then
   g.base16colorspace = 256
+
   cmd [[source ~/.vimrc_background]]
 end
 
 cmd [[syntax on]]
 cmd [[filetype plugin indent on]]
+
 -- make the highlighting of tabs and other non-text less annoying
 cmd [[highlight SpecialKey ctermfg=19 guifg=#333333]]
 cmd [[highlight NonText ctermfg=19 guifg=#333333]]
@@ -257,14 +258,10 @@ cmd [[highlight NonText ctermfg=19 guifg=#333333]]
 cmd [[highlight Comment cterm=italic term=italic gui=italic]]
 cmd [[highlight htmlArg cterm=italic term=italic gui=italic]]
 cmd [[highlight xmlAttrib cterm=italic term=italic gui=italic]]
+
 -- highlight Type cterm=italic term=italic gui=italic
 cmd [[highlight Normal ctermbg=none]]
+
 -- make the StatusLine background match the GalaxyLine styles
 cmd("hi StatusLine guibg=" .. colors.bg)
-
--- PLUGINS 
-
--- NERDTree
-
--- vim.api.nvim_exec("autocmd VimEnter * NERDTree | wincmd p", false)
 
